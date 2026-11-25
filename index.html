@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil | Rangga Bagas Abiansyah</title>
+    <!-- Google Font 'Inter' agar tipografi modern dan nyaman dibaca -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =================================================================
+           1. PALET WARNA: DARK SLATE & EMERALD-CYAN
+           ================================================================= */
+        :root {
+            --bg-halaman: #0b1120;
+            --bg-kartu: #131c31;
+            --bg-kotak-motto: #0f172a;
+            --teks-utama: #f8fafc;
+            --teks-isi: #cbd5e1;
+            --teks-redup: #94a3b8;
+            --aksen-emerald: #10b981;
+            --aksen-cyan: #06b6d4;
+            --border-kartu: rgba(148, 163, 184, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-halaman);
+            /* Cahaya radial emerald-cyan halus di bagian atas layar */
+            background-image:
+                radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.16) 0%, rgba(6, 182, 212, 0.06) 35%, transparent 70%);
+            color: var(--teks-utama);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 16px;
+            line-height: 1.7;
+        }
+
+        /* =================================================================
+           2. KARTU PROFIL UTAMA
+           ================================================================= */
+        .kartu-profil {
+            width: 100%;
+            max-width: 560px;
+            background-color: var(--bg-kartu);
+            border: 1px solid var(--border-kartu);
+            border-radius: 24px;
+            padding: 44px 36px;
+            box-shadow:
+                0 25px 50px -12px rgba(2, 6, 23, 0.75),
+                0 0 30px rgba(16, 185, 129, 0.06);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Garis cahaya tipis gradien emerald-cyan di tepi atas kartu */
+        .kartu-profil::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--aksen-emerald), var(--aksen-cyan));
+        }
+
+        /* =================================================================
+           3. FOTO PROFIL BULAT (130px x 130px) + RING EMERALD-CYAN
+           ================================================================= */
+        .bingkai-foto {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 22px;
+            padding: 3.5px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--aksen-emerald), var(--aksen-cyan));
+            box-shadow: 0 12px 28px rgba(16, 185, 129, 0.22);
+        }
+
+        .foto-profil {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            border: 3px solid var(--bg-kartu);
+            background-color: var(--bg-kotak-motto);
+        }
+
+        /* =================================================================
+           4. IDENTITAS MAHASISWA
+           ================================================================= */
+        h1 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--teks-utama);
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .badge-kampus {
+            display: inline-block;
+            background-color: rgba(16, 185, 129, 0.12);
+            color: #34d399;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 6px 16px;
+            border-radius: 999px;
+            margin-bottom: 28px;
+        }
+
+        .pemisah {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-kartu), transparent);
+            margin-bottom: 26px;
+        }
+
+        /* =================================================================
+           5. BAGIAN TENTANG SAYA & MOTTO HIDUP
+           ================================================================= */
+        .bagian {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+
+        .bagian:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .judul-bagian {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--aksen-emerald);
+            margin-bottom: 10px;
+        }
+
+        .titik-aksen {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--aksen-emerald), var(--aksen-cyan));
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+
+        .teks-tentang {
+            font-size: 0.96rem;
+            color: var(--teks-isi);
+        }
+
+        .teks-tentang strong {
+            color: var(--teks-utama);
+            font-weight: 600;
+        }
+
+        /* Kotak Khusus Motto Hidup */
+        .kotak-motto {
+            background-color: var(--bg-kotak-motto);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-left: 4px solid var(--aksen-emerald);
+            border-radius: 0 14px 14px 0;
+            padding: 18px 20px;
+        }
+
+        .kotak-motto blockquote {
+            font-size: 0.96rem;
+            font-style: italic;
+            font-weight: 500;
+            color: var(--teks-utama);
+        }
+
+        /* =================================================================
+           6. FOOTER RINGKAS
+           ================================================================= */
+        .footer-ringkas {
+            margin-top: 30px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border-kartu);
+            font-size: 0.82rem;
+            color: var(--teks-redup);
+        }
+
+        /* =================================================================
+           7. RESPONSIF UNTUK LAYAR HP (MOBILE)
+           ================================================================= */
+        @media (max-width: 480px) {
+            .kartu-profil {
+                padding: 34px 22px;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.42rem;
+            }
+
+            .badge-kampus {
+                font-size: 0.78rem;
+                padding: 5px 13px;
+            }
+
+            .kotak-motto {
+                padding: 15px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="kartu-profil">
+        <div class="bingkai-foto">
+            <img
+                src="c:\Users\LENOVO\Downloads\WhatsApp Image 2026-11-25 at 14.39.15.jpeg"
+                alt="Foto Profil Rangga Bagas Abiansyah"
+                class="foto-profil"
+            >
+        </div>
+
+        <!-- Nama Lengkap & Badge Kampus -->
+        <h1>Rangga Bagas Abiansyah</h1>
+        <span class="badge-kampus">Mahasiswa S1 Teknik Informatika &bull; Universitas Pamulang</span>
+
+        <div class="pemisah"></div>
+
+        <!-- Bagian Tentang Saya -->
+        <section class="bagian">
+            <h2 class="judul-bagian">
+                <span class="titik-aksen"></span>
+                Tentang Saya
+            </h2>
+            <p class="teks-tentang">
+                Halo! Saya <strong>Rangga Bagas Abiansyah</strong>, Saya merupakan lulusan dari SMK jurusan teknik komputer dan jaringan. Saat ini saya sedang menempuh pendidikan S1 di <strong>Universitas Pamulang</strong> jurusan <strong>Teknik Informatika</strong>. Saya memiliki minat yang besar dalam pengembangan perangkat lunak, terutama dalam pemrograman dan pengembangan web. Saya selalu bersemangat untuk belajar hal-hal baru dan mengembangkan keterampilan saya di bidang teknologi.
+            </p>
+        </section>
+
+        <!-- Bagian Motto Hidup -->
+        <section class="bagian">
+            <h2 class="judul-bagian">
+                <span class="titik-aksen"></span>
+                Motto Hidup
+            </h2>
+            <div class="kotak-motto">
+                <blockquote>
+                    “Terus belajar dari setiap error, karena dari proses itulah solusi terbaik ditemukan.”
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Footer Ringkas -->
+        <footer class="footer-ringkas">
+            &copy; 2026 Rangga Bagas Abiansyah
+        </footer>
+    </main>
+
+</body>
+</html>
